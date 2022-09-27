@@ -5,7 +5,7 @@ services:
     build: 
       context: ./web
       args:
-        DOCUMENT_ROOT: /var/www/html/app/webroot
+        DOCUMENT_ROOT: /var/www/html
     ports:
       - 80:80
       - 443:443
@@ -16,7 +16,7 @@ services:
     links:
       - db
   db:
-    container_name: db
+    container_name: php-flamework-db
     image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
     restart: always
